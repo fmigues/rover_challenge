@@ -2,14 +2,14 @@ class Rover
   attr_reader :planet
   attr_accessor :direction, :position, :x, :y
 
-def initalizar(planet, direction, x, y)
-  @planet = planet
-  @direction = direction
-  @x = x
-  @y = y
-end
+  def initialize(planet, direction, x, y)
+    @planet = planet
+    @direction = direction
+    @x = x
+    @y = y
+  end
 
-def turn(input)
+  def turn(input)
     if input == "R" && @direction == "N" || input == "L" && @direction == "S"
       @direction = "E"
     elsif input == "R" && @direction == "E" || input == "L" && @direction == "W"

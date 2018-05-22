@@ -9,3 +9,23 @@ class Controller
     @rover = rover
     @planet = planet
   end
+
+  def start(rover)
+    @view.print_position(rover)
+  end
+
+  def user_input(rover)
+    @view.get_input(rover)
+  end
+
+  def action(input)
+    @view.print_input(input)
+    input.split('').map do |i|
+    @rover.turn(i)
+    @rover.move(i)
+  end
+  return @view.print_position(@rover)
+end
+
+
+end

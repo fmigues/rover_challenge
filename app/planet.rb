@@ -9,6 +9,6 @@ class Planet
   end
 
   def put_obstacle(obstacle_x, obstacle_y)
-    @obstacle = (obstacle_x, obstacle_y)
+    @obstacle = [obstacle_x, obstacle_y]
   end
 end
