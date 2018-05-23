@@ -6,5 +6,5 @@ rover = Rover.new(planet, "N", 0, 0)
 @controller = Controller.new(rover, planet)
 @controller.start(rover)
 @controller.user_input(rover)
-input = "FFRMMM"
+input = "FFFFFFFFFFF"
 @controller.action(input)

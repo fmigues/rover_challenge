@@ -15,4 +15,9 @@ class View
     sleep(1)
   end
 
+  def error_message(rover)
+    puts "One of your commands is invalid. Review your inputs and try again"
+    print_position(rover)
+  end
+
 end

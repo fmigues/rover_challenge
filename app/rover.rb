@@ -9,6 +9,15 @@ class Rover
     @y = y
   end
 
+   def check_input_valid(input)
+    input.split('').map do |i|
+      if i != "R" && i != "L" && i != "F" && i != "B"
+        return false
+      end
+    end
+    return true
+  end
+
   def turn(input)
     if input == "R" && @direction == "N" || input == "L" && @direction == "S"
       @direction = "E"

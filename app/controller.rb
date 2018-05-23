@@ -19,6 +19,9 @@ class Controller
   end
 
   def action(input)
+    if @rover.check_input_valid(input) == false
+      return @view.error_message(@rover)
+    end
     @view.print_input(input)
     input.split('').map do |i|
     @rover.turn(i)
