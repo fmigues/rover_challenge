@@ -28,12 +28,12 @@ class Controller
       if @rover.obstacle_detector(i) == true
         return @view.obstacle_message(@rover, obstacle)
       end
-    @rover.turn(i)
-    @rover.move(i)
-    @rover.sphere_limit
+      @rover.turn(i)
+      @rover.move(i)
+      @rover.sphere_limit
+    end
+    return @view.print_position(@rover)
   end
-  return @view.print_position(@rover)
-end
 
 
 end

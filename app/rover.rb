@@ -9,7 +9,7 @@ class Rover
     @y = y
   end
 
-   def check_input_valid(input)
+  def check_input_valid(input)
     input.split('').map do |i|
       if i != "R" && i != "L" && i != "F" && i != "B"
         return false
@@ -62,20 +62,20 @@ class Rover
 
   def obstacle_detector(input)
     if @planet.obstacle != nil
-    planet_obstacle_x = @planet.obstacle[0]
-    planet_obstacle_y = @planet.obstacle[1]
-    if @direction == "N" && input == "F" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
-      @direction == "S" && input == "F" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
-      @direction == "N" && input == "B" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
-      @direction == "S" && input == "B" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
-      @direction == "E" && input == "F" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x ||
-      @direction == "W" && input == "F" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
-      @direction == "E" && input == "B" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
-      @direction == "W" && input == "B" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x
-      return true
+      planet_obstacle_x = @planet.obstacle[0]
+      planet_obstacle_y = @planet.obstacle[1]
+      if @direction == "N" && input == "F" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
+        @direction == "S" && input == "F" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
+        @direction == "N" && input == "B" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
+        @direction == "S" && input == "B" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
+        @direction == "E" && input == "F" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x ||
+        @direction == "W" && input == "F" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
+        @direction == "E" && input == "B" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
+        @direction == "W" && input == "B" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x
+        return true
+      end
+      return false
     end
-    return false
-  end
   end
 
 end
