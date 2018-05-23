@@ -12,4 +12,7 @@ Planets are sphere and I considered for this test that ther max size is [max_x, 
 So if the rover is at N [0, 0] and it moves backward, the position will be N [max_x, 0].
 You can also set obstacles in the planet and rovers are ready to detect them and stop moving.
 
+You can test it by running rspec spec/rover_spec.rb - need to install gem rspec
+You can play by running ruby all/app.rb
+
 

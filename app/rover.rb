@@ -61,6 +61,7 @@ class Rover
   end
 
   def obstacle_detector(input)
+    if @planet.obstacle != nil
     planet_obstacle_x = @planet.obstacle[0]
     planet_obstacle_y = @planet.obstacle[1]
     if @direction == "N" && input == "F" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
@@ -74,6 +75,7 @@ class Rover
       return true
     end
     return false
+  end
   end
 
 end
