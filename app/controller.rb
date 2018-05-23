@@ -23,6 +23,7 @@ class Controller
     input.split('').map do |i|
     @rover.turn(i)
     @rover.move(i)
+    @rover.sphere_limit
   end
   return @view.print_position(@rover)
 end

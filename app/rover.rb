@@ -33,5 +33,22 @@ class Rover
     end
   end
 
+  def sphere_limit
+    planet_max_x = @planet.planet_max_x
+    planet_max_y = @planet.planet_max_y
+    if
+      @x > planet_max_x
+      @x = 0
+    elsif
+      @x <= -1
+      @x = planet_max_x
+    elsif
+      @y > planet_max_y
+      @y = 0
+    elsif
+      @y <= -1
+      @y = planet_max_y
+    end
+  end
 
 end
