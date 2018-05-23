@@ -20,10 +20,10 @@ class Controller
 
   def action(input)
     obstacle = @planet.obstacle
+    @view.print_input(input)
     if @rover.check_input_valid(input) == false
       return @view.error_message(@rover)
     end
-    @view.print_input(input)
     input.split('').map do |i|
       if @rover.obstacle_detector(i) == true
         return @view.obstacle_message(@rover, obstacle)

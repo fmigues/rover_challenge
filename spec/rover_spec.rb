@@ -10,6 +10,7 @@ describe Controller do
    rv = Rover.new(pt, "N", 0, 0)
    ct = Controller.new(rv, pt)
    input = "FFRFFFR"
+   ct.start(rv)
    ct.action(input)
    expect(rv.check_input_valid input).to be true
    expect(rv.direction).to eq "S"
@@ -22,6 +23,7 @@ describe Controller do
    rv = Rover.new(pt, "N", 0, 0)
    ct = Controller.new(rv, pt)
    input = "FFRFFFRW"
+   ct.start(rv)
    ct.action(input)
    expect(rv.check_input_valid input).to be false
    expect(rv.direction).to eq("N")
@@ -34,6 +36,7 @@ describe Controller do
    rv = Rover.new(pt, "N", 0, 0)
    ct = Controller.new(rv, pt)
    input = "FFFFFFFFFFRBBB"
+   ct.start(rv)
    ct.action(input)
    expect(rv.direction).to eq("E")
    expect(rv.x).to eq(1)
@@ -46,6 +49,7 @@ describe Controller do
    rv = Rover.new(pt, "N", 0, 0)
    ct = Controller.new(rv, pt)
    input = "FRFFFRFFFRFF"
+   ct.start(rv)
    ct.action(input)
    expect(rv.direction).to eq("E")
    expect(rv.x).to eq(1)

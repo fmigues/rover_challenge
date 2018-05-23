@@ -2,7 +2,6 @@ class View
 
   def print_position(rover)
     puts "Rover position: #{rover.direction} [#{rover.x}, #{rover.y}]"
-    puts "==========================="
   end
 
   def get_input(rover)
@@ -16,7 +15,7 @@ class View
   end
 
   def error_message(rover)
-    puts "One of your commands is invalid. Review your inputs and try again"
+    puts "One (or more) of your commands is invalid. Review your inputs and try again"
     print_position(rover)
   end
 
