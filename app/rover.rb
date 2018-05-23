@@ -60,4 +60,20 @@ class Rover
     end
   end
 
+  def obstacle_detector(input)
+    planet_obstacle_x = @planet.obstacle[0]
+    planet_obstacle_y = @planet.obstacle[1]
+    if @direction == "N" && input == "F" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
+      @direction == "S" && input == "F" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
+      @direction == "N" && input == "B" && planet_obstacle_x == @x - 1 && @y == planet_obstacle_y ||
+      @direction == "S" && input == "B" && planet_obstacle_x == @x + 1 && @y == planet_obstacle_y ||
+      @direction == "E" && input == "F" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x ||
+      @direction == "W" && input == "F" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
+      @direction == "E" && input == "B" && planet_obstacle_y == @y - 1 && @x == planet_obstacle_x ||
+      @direction == "W" && input == "B" && planet_obstacle_y == @y + 1 && @x == planet_obstacle_x
+      return true
+    end
+    return false
+  end
+
 end

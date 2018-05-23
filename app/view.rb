@@ -20,4 +20,9 @@ class View
     print_position(rover)
   end
 
+   def obstacle_message(rover, obstacle)
+    puts "Your rover encountered a obstacle at #{obstacle}. The rover is at
+    #{rover.direction} [#{rover.x}, #{rover.y}]. Please review your code."
+  end
+
 end
