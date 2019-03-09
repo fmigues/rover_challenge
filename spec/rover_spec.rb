@@ -14,8 +14,8 @@ describe Controller do
    ct.action(input)
    expect(rv.check_input_valid input).to be true
    expect(rv.direction).to eq "S"
-   expect(rv.x).to eq(2)
-   expect(rv.y).to eq(3)
+   expect(rv.current_x).to eq(2)
+   expect(rv.current_y).to eq(3)
  end
 
  it "Rover should not move when receiving invalid inputs" do
@@ -27,8 +27,8 @@ describe Controller do
    ct.action(input)
    expect(rv.check_input_valid input).to be false
    expect(rv.direction).to eq("N")
-   expect(rv.x).to eq(0)
-   expect(rv.y).to eq(0)
+   expect(rv.current_x).to eq(0)
+   expect(rv.current_y).to eq(0)
  end
 
  it "Rover should move around the planet when reaching its limit" do
@@ -39,8 +39,8 @@ describe Controller do
    ct.start(rv)
    ct.action(input)
    expect(rv.direction).to eq("E")
-   expect(rv.x).to eq(1)
-   expect(rv.y).to eq(6)
+   expect(rv.current_x).to eq(1)
+   expect(rv.current_y).to eq(6)
  end
 
  it "Rover should stop moving when there is an obstacle" do
@@ -52,7 +52,7 @@ describe Controller do
    ct.start(rv)
    ct.action(input)
    expect(rv.direction).to eq("E")
-   expect(rv.x).to eq(1)
-   expect(rv.y).to eq(1)
+   expect(rv.current_x).to eq(1)
+   expect(rv.current_y).to eq(1)
  end
 end

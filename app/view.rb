@@ -1,7 +1,7 @@
 class View
 
   def print_position(rover)
-    puts "Rover position: #{rover.direction} [#{rover.x}, #{rover.y}]"
+    puts "Rover position: #{rover.direction} [#{rover.current_x}, #{rover.current_y}]"
   end
 
   def get_input(rover)
@@ -21,7 +21,7 @@ class View
 
   def obstacle_message(rover, obstacle)
     puts "Your rover encountered a obstacle at #{obstacle}. The rover is at
-    #{rover.direction} [#{rover.x}, #{rover.y}]. Please review your code."
+    #{rover.direction} [#{rover.current_x}, #{rover.current_y}]. Please review your code."
   end
 
 end
